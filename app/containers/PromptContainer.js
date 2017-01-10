@@ -1,5 +1,6 @@
 var React =  require('React'); 
 var transparentBg = require('../styles').transparentBg;
+var Prompt = require('../components/Prompt');
 
 var PromptContainer = React.createClass({
     contextTypes:{
@@ -10,12 +11,12 @@ var PromptContainer = React.createClass({
             username: ''
         }   
     },
-    onUpdateUser(e){
+    handleUpdateUser(e){
         this.setState({
             username:e.target.value
         })
     },
-    onSubmitUser(e){
+    handleSubmitUser(e){
         e.preventDefault();
         var username = this.state.username;
         this.setState({
@@ -36,32 +37,12 @@ var PromptContainer = React.createClass({
     ,
     render : function(){
         return(
-        
-            <div className="jumbotron col-sm-6 col-sm-offset-3 text-center" style={transparentBg}>
-                <h1>{this.props.route.header}</h1>
-                <div className="col-sm-12">
-                    <form onSubmit={this.onSubmitUser}>
-                        <div className="from-group">
-                            <input 
-                                className="from-group"
-                                placeholder="Github Username"
-                                type="text" 
-                                onChange={this.onUpdateUser}
-                                value={this.state.username}
-                            />
-                            </div>
-                            <div
-                             className="from-group col-sm-4 col-sm-offset-4">
-                                <button 
-                                    className='btn-sm btn-success'
-                                    type="submit"
-                                    >
-                                    Continue
-                                    </button>
-                             </div>
-                        </form>
-                </div>
-            </div>
+            <Prompt 
+                onSubmitUser={this.handleSubmitUser}
+                onUpdateUser={this.handleUpdateUser}
+                header={this.props.route.header}
+                username={this.state.username}
+            />
         )
     }
 });

@@ -1,15 +1,9 @@
- var React = require('react');
- var ConfrimBattle = require('../components/ConfrimBattle');
+var React = require('react');
 
- var ConfrimBattleContainer = React.createClass({
-     contextTypes:{
-         router: React.PropTypes.object.isRequired
-     },
-     getInitialState(){
-         return{
-             isLoading:true,
-             playerInfo:[]
-         }
-     }
+function ConfirmBattle(props) {
+    return (
+        <div>Confirm Battle</div>
+    );
+};
 
- })
+module.exports = ConfirmBattle;

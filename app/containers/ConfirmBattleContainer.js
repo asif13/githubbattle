@@ -11,9 +11,15 @@
              playerInfo:[]
          }
      },
+     componentDidMount(){
+         var query = this.props.location.query;
+    },
      render(){
          return(
-            <div>Hi</div>
+            <ConfirmBattle
+                isLoading={this.state.isLoading}
+                playersInfo={this.state.playersInfo}
+             />
          )
      }
  })

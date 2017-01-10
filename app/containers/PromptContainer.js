@@ -10,15 +10,15 @@ var PromptContainer = React.createClass({
             username: ''
         }   
     },
-    onUpdateUser(){
-        this.setstate({
+    onUpdateUser(e){
+        this.setState({
             username:e.target.value
         })
     },
-    onSubmitUser(){
+    onSubmitUser(e){
         e.preventDefault();
         var username = this.state.username;
-        this.setstate({
+        this.setState({
             username:''
         })
         if (this.props.routeParams.playerOne){

@@ -14,9 +14,11 @@
      componentDidMount(){
          var query = this.props.location.query;
          githubHelpers.getPlayersInfo([query.playerOne,query.playerTwo]).then(function(players){
+             
              this.setState({
                  isLoading:false,
-                 playersInfo:[players[0],players[1]]
+                 playersInfo:[players[0],players[1]],
+                 
              })
          }.bind(this))
     },

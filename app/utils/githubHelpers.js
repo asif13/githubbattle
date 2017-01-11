@@ -34,6 +34,7 @@ function calculateScores (players) {
     players[0].followers * 3 + players[0].totalStars,
     players[1].followers * 3 + players[1].totalStars
   ]
+    // return [22,22]
 }
 
 var helpers = {

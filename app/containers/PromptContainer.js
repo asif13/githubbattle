@@ -28,7 +28,7 @@ var PromptContainer = React.createClass({
                 query:{
                     playerOne:this.props.routeParams.playerOne,
                     playerTwo: this.state.username
-                }
+                } 
             })
         }else{
             this.context.router.push('/playerTwo/'+this.state.username);
